@@ -46,7 +46,7 @@ from lerobot_teleoperator_gello import GelloConfig
 
 logger = logging.getLogger(__name__)
 
-ROBOT_IP   = "192.168.100.3"
+ROBOT_IP   = "172.17.0.2"  # 172.17.0.2   192.168.100.3
 GELLO_PORT = "/dev/serial/by-id/usb-FTDI_USB__-__Serial_Converter_FTAO528D-if00-port0"
 
 

@@ -35,8 +35,8 @@ class UR10(Robot):
         self.rtde_rec:  Optional[rtde_receive.RTDEReceiveInterface]  = None
 
         # servoJ parameters — CB3 runs at 125 Hz so t=0.008 matches the controller cycle
-        self.acc               = 0.5
-        self.speed             = 0.5
+        self.acc               = 0.9
+        self.speed             = 0.9
         self.servoj_t          = 1.0 / 125   # 8 ms — matches CB3 controller frequency
         self.servoj_lookahead  = 0.1          # seconds, range [0.03, 0.2]
         self.servoj_gain       = 300          # range [100, 2000]

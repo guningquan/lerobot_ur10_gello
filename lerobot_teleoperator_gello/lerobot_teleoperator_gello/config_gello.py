@@ -29,7 +29,7 @@
 
 from dataclasses import dataclass, field
 from lerobot.teleoperators.config import TeleoperatorConfig
-
+import numpy as np
 
 @TeleoperatorConfig.register_subclass("gello")
 @dataclass
@@ -43,12 +43,7 @@ class GelloConfig(TeleoperatorConfig):
     # From gello_agent.py — validated on hardware
     joint_offsets: list[float] = field(
         default_factory=lambda: [
-            4 * 3.14159 / 2,  # joint 1
-            2 * 3.14159 / 2,  # joint 2
-            2 * 3.14159 / 2,  # joint 3
-            2 * 3.14159 / 2,  # joint 4
-            2 * 3.14159 / 2,  # joint 5
-            1 * 3.14159 / 2,  # joint 6
+            2*np.pi/2, 2*np.pi/2, 2*np.pi/2, 2*np.pi/2, 2*np.pi/2, 1*np.pi/2
         ]
     )
 
@@ -62,7 +57,7 @@ class GelloConfig(TeleoperatorConfig):
     gripper_travel_counts: int = 575
 
     calibration_position: list[float] = field(
-        default_factory=lambda: [0, -1.57, 1.57, -1.57, -1.57, 1.57]
+        default_factory=lambda: [0, -1.57, 1.57, -1.57, -1.57, 0]
     )
 
     smoothing: float = 0.85

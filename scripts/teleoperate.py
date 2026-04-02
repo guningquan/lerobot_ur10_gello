@@ -20,7 +20,7 @@ def main() -> None:
     init_logging()
     logging.info("Starting UR10 <-> GELLO teleoperation")
 
-    robot_cfg = UR10Config(ip="192.168.100.3")
+    robot_cfg = UR10Config(ip="172.17.0.2")  # 172.17.0.2   192.168.100.3
     teleop_cfg = GelloConfig(
         port="/dev/serial/by-id/usb-FTDI_USB__-__Serial_Converter_FTAO528D-if00-port0",
         id="gello_teleop",

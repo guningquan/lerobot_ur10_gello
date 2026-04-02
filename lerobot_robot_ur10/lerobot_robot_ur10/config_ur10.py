@@ -9,7 +9,8 @@ from lerobot.cameras.realsense.configuration_realsense import RealSenseCameraCon
 @RobotConfig.register_subclass("ur10")
 @dataclass
 class UR10Config(RobotConfig):
-    ip: str = "192.168.100.3"
+    # ip: str = "172.17.0.2"  # 172.17.0.2   192.168.100.3
+    ip: str = "192.168.100.3"  # 172.17.0.2   
 
     gripper_port: str = "/dev/serial/by-id/usb-FTDI_USB__-__Serial_Converter_FTAO4W75-if00-port0"
     gripper_baud: int = 1_000_000
